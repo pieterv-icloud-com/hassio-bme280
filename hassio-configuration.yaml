@@ -1,0 +1,22 @@
+sensor:
+  - platform: mqtt
+    name: "Temperature"
+    unique_id: kitchen-temperature
+    state_topic: "/kitchen/sensor"
+    unit_of_measurement: '°C'
+    device_class: "temperature"
+    value_template: "{{ value_json.temperature }}"
+  - platform: mqtt
+    name: "Humidity"
+    unique_id: kitchen-humidity
+    state_topic: "/kitchen/sensor"
+    unit_of_measurement: '%'
+    device_class: "humidity"
+    value_template: "{{ value_json.humidity }}"
+  - platform: mqtt
+    name: "Air Pressure"
+    unique_id: kitchen-air-pressure
+    state_topic: "/kitchen/sensor"
+    device_class: "pressure"
+    unit_of_measurement: 'hPa'
+    value_template: "{{ value_json.pressure }}"
